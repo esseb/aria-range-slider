@@ -97,7 +97,7 @@
 
     this.value = value;
     this.percentage = percentage;
-    this.input.value = value;
+    this.input.setAttribute('value', value);
     this.container.setAttribute('aria-valuenow', value);
 
     this.handle.style.left = percentage + '%';
