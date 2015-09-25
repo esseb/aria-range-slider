@@ -1,6 +1,6 @@
 {
   "name": "aria-range-slider",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An accessible range slider",
   "main": "index.js",
   "scripts": {
@@ -8,16 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/esseb/aria-slider.git"
+    "url": "git+https://github.com/esseb/aria-range-slider.git"
   },
   "keywords": [
     "aria",
-    "slider"
+    "range",
+    "slider",
+    "input"
   ],
   "author": "Stein Cato Blostrupmoen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/esseb/aria-slider/issues"
+    "url": "https://github.com/esseb/aria-range-slider/issues"
   },
-  "homepage": "https://github.com/esseb/aria-slider#readme"
+  "homepage": "https://github.com/esseb/aria-range-slider#readme"
 }

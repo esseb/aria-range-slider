@@ -1,0 +1,28 @@
+{
+  "name": "aria-range-slider",
+  "main": "index.js",
+  "version": "0.1.1",
+  "homepage": "https://github.com/esseb/aria-range-slider",
+  "authors": [
+    "Stein Cato Blostrupmoen (esseb@esseb.com)"
+  ],
+  "description": "An accessible range slider",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "aria",
+    "range",
+    "slider",
+    "input"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
