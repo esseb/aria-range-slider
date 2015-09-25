@@ -1,7 +1,7 @@
 {
-  "name": "aria-slider",
+  "name": "aria-range-slider",
   "version": "0.1.0",
-  "description": "An accessible slider",
+  "description": "An accessible range slider",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
