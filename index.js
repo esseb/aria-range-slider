@@ -78,7 +78,7 @@
         className = options.classNames[key];
       }
 
-      this.options.classNames[key] = classNames[key];
+      this.options.classNames[key] = className;
     }
   }
 
