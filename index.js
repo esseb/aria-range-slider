@@ -11,7 +11,7 @@
     this.min = this.options.min;
     this.max = this.options.max;
     this.step = this.options.step;
-    this.range = this.max - this.step;
+    this.range = this.max - this.min;
 
     // The maximum value possible given the min value and the step value may be
     // less than max.
