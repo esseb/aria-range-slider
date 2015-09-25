@@ -1,7 +1,7 @@
 {
   "name": "aria-range-slider",
   "main": "index.js",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://github.com/esseb/aria-range-slider",
   "authors": [
     "Stein Cato Blostrupmoen (esseb@esseb.com)"
