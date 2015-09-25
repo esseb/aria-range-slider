@@ -1,0 +1,23 @@
+{
+  "name": "aria-slider",
+  "version": "0.1.0",
+  "description": "An accessible slider",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esseb/aria-slider.git"
+  },
+  "keywords": [
+    "aria",
+    "slider"
+  ],
+  "author": "Stein Cato Blostrupmoen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/esseb/aria-slider/issues"
+  },
+  "homepage": "https://github.com/esseb/aria-slider#readme"
+}
