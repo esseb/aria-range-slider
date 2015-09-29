@@ -181,7 +181,7 @@
     this.container.addEventListener(
         'keydown', this.handleContainerKeyDown_.bind(this));
 
-    this.bar.addEventListener('click', this.handleBarClick_.bind(this));
+    this.track.addEventListener('click', this.handleTrackClick_.bind(this));
 
     this.handle.addEventListener('click', this.handleHandleClick_.bind(this));
     this.handle.addEventListener(
@@ -238,12 +238,12 @@
     this.dispatchEvent_();
   }
 
-  Slider.prototype.handleBarClick_ = function(event) {
-    var barRect = this.bar.getBoundingClientRect();
-    var x = event.clientX - barRect.left;
-    var y = event.clientY - barRect.top;
+  Slider.prototype.handleTrackClick_ = function(event) {
+    var trackRect = this.track.getBoundingClientRect();
+    var x = event.clientX - trackRect.left;
+    var y = event.clientY - trackRect.top;
 
-    var percentage = (100 / barRect.width) * x;
+    var percentage = (100 / trackRect.width) * x;
     this.setPercentage_(percentage);
 
     this.dispatchEvent_();
@@ -263,11 +263,11 @@
       return;
     }
 
-    var barRect = this.bar.getBoundingClientRect();
-    var x = event.clientX - barRect.left;
-    var y = event.clientY - barRect.top;
+    var trackRect = this.track.getBoundingClientRect();
+    var x = event.clientX - trackRect.left;
+    var y = event.clientY - trackRect.top;
 
-    var percentage = (100 / barRect.width) * x;
+    var percentage = (100 / trackRect.width) * x;
     this.setPercentage_(percentage);
   }
 
