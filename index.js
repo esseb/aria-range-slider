@@ -278,7 +278,6 @@
   }
 
   Slider.prototype.handleHandleTouchStart_ = function(event) {
-    console.log('handleHandleTouchStart_');
     this.touching = true;
     event.preventDefault();
   }
@@ -293,7 +292,6 @@
   }
 
   Slider.prototype.handleWindowTouchMove_ = function(event) {
-    console.log('handleWindowTouchMove_', event);
     if (this.touching === false) {
       return;
     }
@@ -328,7 +326,6 @@
   }
 
   Slider.prototype.handleWindowTouchEnd_ = function(event) {
-    console.log('handleWindowTouchEnd_');
     if (this.touching) {
       this.dispatchEvent_();
     }
