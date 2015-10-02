@@ -7,6 +7,7 @@
 
     this.input = input;
     this.dragging = false;
+    this.touching = false;
     this.value = this.options.value;
     this.min = this.options.min;
     this.max = this.options.max;
@@ -193,6 +194,16 @@
     window.addEventListener('blur', this.handleWindowBlur_.bind(this));
 
     // TODO: Touch/Pointer events...
+    this.track.addEventListener('touchstart', this.handleTrackTouch_.bind(this));
+
+    this.handle.addEventListener(
+        'touchstart', this.handleHandleTouchStart_.bind(this));
+
+    window.addEventListener(
+        'touchmove', this.handleWindowTouchMove_.bind(this));
+    window.addEventListener('touchend', this.handleWindowTouchEnd_.bind(this));
+    
+    
   }
 
   /**
@@ -249,13 +260,50 @@
     this.dispatchEvent_();
   }
 
+  Slider.prototype.handleTrackTouch_ = function(event) {
+    event.preventDefault();
+
+    var trackRect = this.track.getBoundingClientRect();
+    var x = event.targetTouches[0].clientX - trackRect.left;
+    var y = event.targetTouches[0].clientY - trackRect.top;
+
+    var percentage = (100 / trackRect.width) * x;
+    this.setPercentage_(percentage);
+
+    this.dispatchEvent_();
+  }
+
   Slider.prototype.handleHandleClick_ = function(event) {
     event.stopPropagation();
   }
 
+  Slider.prototype.handleHandleTouchStart_ = function(event) {
+    console.log('handleHandleTouchStart_');
+    this.touching = true;
+    event.preventDefault();
+  }
+
   Slider.prototype.handleHandleMouseDown_ = function(event) {
+    if (this.touching) {
+      return;
+    }
+
     this.dragging = true;
     event.preventDefault();
+  }
+
+  Slider.prototype.handleWindowTouchMove_ = function(event) {
+    console.log('handleWindowTouchMove_', event);
+    if (this.touching === false) {
+      return;
+    }
+
+    var trackRect = this.track.getBoundingClientRect();
+    var x = event.targetTouches[0].clientX - trackRect.left;
+    var y = event.targetTouches[0].clientY - trackRect.top;
+
+    var percentage = (100 / trackRect.width) * x;
+    this.setPercentage_(percentage);
   }
 
   Slider.prototype.handleWindowMouseMove_ = function(event) {
@@ -277,6 +325,15 @@
     }
 
     this.dragging = false;
+  }
+
+  Slider.prototype.handleWindowTouchEnd_ = function(event) {
+    console.log('handleWindowTouchEnd_');
+    if (this.touching) {
+      this.dispatchEvent_();
+    }
+
+    this.touching = false;
   }
 
   Slider.prototype.handleWindowBlur_ = function(event) {
