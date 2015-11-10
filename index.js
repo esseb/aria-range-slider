@@ -342,11 +342,19 @@
   }
 
   Slider.prototype.dispatchEvent_ = function() {
-    var event = new Event('change', {
-      'view': window,
-      'bubbles': true,
-      'cancelable': false
-    });
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent('change', true, true);
+    }
+    else {
+      event = new Event(
+        'change',
+        {
+          'bubbles': true
+        }
+      );
+    }
 
     this.input.dispatchEvent(event);
   }
