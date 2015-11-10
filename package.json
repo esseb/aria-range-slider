@@ -1,6 +1,6 @@
 {
   "name": "aria-range-slider",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "An accessible range slider",
   "main": "index.js",
   "scripts": {
